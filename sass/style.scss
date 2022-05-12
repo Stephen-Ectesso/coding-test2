@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@400;700&display=swap');
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Nunito Sans', sans-serif;
+
+// Variables
+$color1: #137195;
+$color2: #001246;
+$transition: all 0.4s ease 0s;
+$box-shadow: 0 2px 20px 0 rgba(0,
+    0,
+    0,
+    0.10);
+
+
+// Typography
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 80px;
+
+    @media (max-width:768px) {
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+a {
+    transition: $transition;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+// Common styles
+.main-outercon {
+    width: 100%;
+    max-width: 1458px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 25px;
+
+    border-radius: 25px;
+
+    &.btn-primary {
+        background: $color1;
+        color: #fff;
+
+        &:hover {
+            background: $color2;
+        }
+    }
+
+}
+
+// Header styles
+.header {
+    padding: 15px 20px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+
+    @media(max-width:768px) {
+       justify-content: space-between;
+    }
+
+    .header-r {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media(max-width:768px) {
+            display: none;
+        }
+
+        .header-r-l,
+        .header-r-r {
+            ul {
+                li {
+                    display: inline-block;
+                    margin-left: 30px;
+
+                    @media(max-width:992px) {
+                        margin-left: 10px;
+                    }
+
+                    a {
+                        font-family: 'Nunito Sans', sans-serif;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 14px;
+                        text-transform: uppercase;
+                        color: $color2;
+
+                        &:hover {
+                            color: $color1;
+                        }
+
+                        &.trial-btn {
+                            display: inline-block;
+                            line-height: 40px;
+                            padding: 0 25px;
+                            background: $color1;
+                            color: #fff;
+                            border-radius: 25px;
+
+                            &:hover {
+                                background: $color2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: $transition;
+    padding: 25px 0;
+
+    ul {
+        padding: 25px;
+        margin-bottom: 25px;
+        border-top: 1px solid #999;
+        border-bottom: 1px solid #999;
+
+        li {
+            display: block;
+            margin: 0 0 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                font-family: 'Nunito Sans', sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 14px;
+                text-transform: uppercase;
+                color: $color2;
+                position: relative;
+
+                &:hover {
+                    color: $color1;
+                }
+
+                &:after {
+                    content: '\f105';
+                    font-family: 'FontAwesome';
+                    position: relative;
+                    right: -10px;
+                }
+            }
+        }
+    }
+
+    .sidenav-logo {
+        padding: 0 25px;
+        margin-bottom: 40px;
+    }
+
+    .special-nav {
+        padding: 0 25px;
+        margin-bottom: 25px;
+
+        a {
+            display: block;
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+            color: $color1;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                color: $color2;
+            }
+        }
+    }
+
+    .btn {
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+#sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+
+.sidenav-open {
+    .sidenav {
+        width: 300px;
+    }
+}
+
+.sidenav-open #sidenav-overlay {
+    width: 100%;
+}
+
+.opennav {
+    color: $color1;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+
+    @media(max-width:768px) {
+        display: block;
+    }
+
+}
+
+
+// Banner styles
+.banner {
+    display: flex;
+
+    @media(max-width:768px) {
+        display: block;
+    }
+
+    .banner-left,.banner-right {
+        width: 50%;
+
+        @media(max-width:768px) {
+            width: 100%;
+        }
+    }
+
+    
+}
